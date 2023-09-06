@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Anna",
+    "email": "anna@email.com",
+    "stripeCustomerId": "cus_OaXHFlcSLEjMXc"
+  },
+  {
+    "name": "Elin",
+    "email": "elin@email.com",
+    "stripeCustomerId": "cus_OaXHZa1F2uyRfc"
+  }
+]
