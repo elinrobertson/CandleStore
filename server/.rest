@@ -1,1 +1,14 @@
 GET http://localhost:3000/users/register
+
+####
+
+
+
+
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+    "name": "elin22",
+    "email": "elin22@email.se"
+}
