@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 // const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const userRouter = require("./routes/user.router");
-// const cookieSession = require("cookie-session")
+const cookieSession = require("cookie-session")
 
 const app = express();
 
@@ -18,13 +18,15 @@ app.use(
 );
 app.use(express.json())
 
-// app.use(cookieSession({
-//     secret: "S3cR3TK3Y",
-//     maxAge: 24 * 60 * 60 * 1000,
-//     sameSite: "strict",
-//     httpOnly: true,
-//     secure: false
-// }))
+app.use(
+    cookieSession({
+        secret: "S3cR3TK3Y",
+        maxAge: 24 * 60 * 60 * 1000,
+        sameSite: "strict",
+        httpOnly: true,
+        secure: false
+    })
+);
 
 
 //Routers ska in här

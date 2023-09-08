@@ -53,14 +53,42 @@ async function register(req, res) {
         // Du kan lägga till mer logik här om du behöver, som att hantera lösenord eller andra användaruppgifter
 
         res.status(201).json(customer);
+        
     } catch (error) {
         console.error("Fel vid registrering:", error);
         res.status(400).json(error.message);
     }
 }
 
+async function login(req, res) {
+    // Check if username and password is correct
+    const existingUser = await stripe.customers.list({
+        email: req.body.email
+    }).select("+password");
+  
+    if (
+      !existingUser ||
+      !(await bcrypt.compare(req.body.password, existingUser.password))
+    ) {
+      return res.status(401).json("Wrong password or username");
+    }
+  
+    const user = existingUser.toJSON();
+    user._id = existingUser._id;
+    delete user.password;
+  
+    // Check if user already is logged in
+    if (req.session._id) {
+      return res.status(200).json(user);
+    }
+  
+    // Save info about the user to the session (an encrypted cookie stored on the client)
+    req.session = user;
+    res.status(200).json(user);
+  }
 
 
-module.exports = { register }
+
+module.exports = { register, login }
 
 // APIom hur man registrerar användare

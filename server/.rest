@@ -9,7 +9,17 @@ POST http://localhost:3000/api/users/register
 Content-Type: application/json
 
 {
-    "name": "elin40",
-    "email": "elin40@gmail.se",
-    "password": "elin123"
+    "name": "elin41",
+    "email": "elin41@gmail.se",
+    "password": "elin124"
+}
+
+####
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "elin41@gmail.se",
+  "password": "elin124"
 }

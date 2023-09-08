@@ -195,5 +195,11 @@
     "email": "elin40@gmail.se",
     "password": "$2b$10$kY4eQQAxDUlcmGvJwGmqNOAWiVgHEuCE2TEM.2MKxBfXe9zXbejFC",
     "stripeCustomerId": "cus_ObFdLvbDKCYsyi"
+  },
+  {
+    "name": "elin41",
+    "email": "elin41@gmail.se",
+    "password": "$2b$10$jG6Lw3Lk3SWCCilhoUtiOus9aIQUOh.i/bKK63JsDlWI3rLKS3zpC",
+    "stripeCustomerId": "cus_ObH0juKAcwniTK"
   }
 ]
