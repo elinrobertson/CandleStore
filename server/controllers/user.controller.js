@@ -44,11 +44,6 @@ async function register(req, res) {
         fs.writeFileSync(filePath, jsonData)
 
 
-        // Här kan du också spara användaruppgifter som metadata i Stripe-kunden
-        await stripe.customers.update(customer.id, {
-            metadata: { name: name, email: email, stripeCustomerId: customer.id}
-        });
-
         // Nu har du skapat en ny användare i Stripe
         // Du kan lägga till mer logik här om du behöver, som att hantera lösenord eller andra användaruppgifter
 

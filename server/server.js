@@ -29,7 +29,7 @@ app.use(express.json())
 
 //Routers ska in här
 
-app.use("/users", userRouter)
+app.use("/api/users", userRouter)
 
 // Denna bör flyttar över till checkouten sen
 
