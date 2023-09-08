@@ -183,5 +183,17 @@
     "name": "elin35",
     "email": "elin35@gmail.se",
     "stripeCustomerId": "cus_ObDRCM9wqdZRGh"
+  },
+  {
+    "name": "elin39",
+    "email": "elin39@gmail.se",
+    "password": "$2b$10$TayJu7zO2weahflwoVqO2OVwS2xXDy4.bQGfQhrvJoimOdVA1Rd0q",
+    "stripeCustomerId": "cus_ObFdvHCV4LfoH5"
+  },
+  {
+    "name": "elin40",
+    "email": "elin40@gmail.se",
+    "password": "$2b$10$kY4eQQAxDUlcmGvJwGmqNOAWiVgHEuCE2TEM.2MKxBfXe9zXbejFC",
+    "stripeCustomerId": "cus_ObFdLvbDKCYsyi"
   }
 ]
