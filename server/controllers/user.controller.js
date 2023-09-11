@@ -1,6 +1,8 @@
 const fs = require("fs");
 const bcrypt = require("bcrypt");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const filePath = "./db/customers.json";
+
 
 
 async function register(req, res) {
@@ -21,8 +23,6 @@ async function register(req, res) {
             email: email,
             // password: hashedPassword
         });
-
-        const filePath = "./db/customers.json";
 
         let existingUsers = [];
 
@@ -62,9 +62,15 @@ async function register(req, res) {
 
 async function login(req, res) {
     // Check if username and password is correct
-    const existingUser = await stripe.customers.list({
-        email: req.body.email
-    }).select("+password");
+    const dbUsers = fs.readFileSync(filePath)
+
+    const customers = JSON.parse(dbUsers)
+
+    console.log("body:" + req.body);
+    const existingUser = customers.find(customer => customer.email = req.body.email)
+    console.log("Hej");
+    console.log(existingUser);
+    console.log(req.body);
   
     if (
       !existingUser ||
@@ -72,19 +78,16 @@ async function login(req, res) {
     ) {
       return res.status(401).json("Wrong password or username");
     }
-  
-    const user = existingUser.toJSON();
-    user._id = existingUser._id;
-    delete user.password;
+
   
     // Check if user already is logged in
-    if (req.session._id) {
-      return res.status(200).json(user);
+    if (req.session.id) {
+      return res.status(200).json(existingUser);
     }
   
     // Save info about the user to the session (an encrypted cookie stored on the client)
-    req.session = user;
-    res.status(200).json(user);
+    req.session = existingUser;
+    res.status(200).json(existingUser);
   }
 
 
