@@ -48,7 +48,6 @@ async function register(req, res) {
 
         fs.writeFileSync(filePath, jsonData)
 
-
         // Nu har du skapat en ny användare i Stripe
         // Du kan lägga till mer logik här om du behöver, som att hantera lösenord eller andra användaruppgifter
 
@@ -66,11 +65,7 @@ async function login(req, res) {
 
     const customers = JSON.parse(dbUsers)
 
-    console.log("body:" + req.body);
-    const existingUser = customers.find(customer => customer.email = req.body.email)
-    console.log("Hej");
-    console.log(existingUser);
-    console.log(req.body);
+    const existingUser = customers.find(customer => customer.email === req.body.email)
   
     if (
       !existingUser ||
@@ -93,5 +88,3 @@ async function login(req, res) {
 
 
 module.exports = { register, login }
-
-// APIom hur man registrerar användare

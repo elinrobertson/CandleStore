@@ -1,17 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import "./Home.css"
 
 function Home() {
     return (
         <div className="main-content">
-          <Router>
-            {/* <Route path="/" element={<ProductList />} /> */}
-            <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/createuser" element={<RegisterUser />} />
-            </Routes>
-            {/* <Route path="/checkout" element={<Checkout />} /> */}
-          </Router>
+            <h1>Home</h1>
         </div>
       );
     }

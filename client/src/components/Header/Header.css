@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-div {
+    background-color: rgb(112, 210, 221);
+    height: 5rem;
+    width: 100vw;
+}

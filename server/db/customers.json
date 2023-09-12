@@ -1,8 +1,20 @@
 [
   {
-    "name": "Hanna",
-    "email": "hanna@gmail.se",
-    "password": "$2b$10$6DJLp1n00zRddGkWoKf3fOtQb3LVwQbT6cMc9IozVQWIVgrJqQtby",
-    "stripeCustomerId": "cus_OcN3ghgfymNDvU"
+    "name": "Emma2",
+    "email": "emma2@gmail.se",
+    "password": "$2b$10$omCuJUHUqYobHyWI.zQdquNie25cLpmEWr8jmCrYj8kfyaJd1ZoCq",
+    "stripeCustomerId": "cus_OcgfeB1oWuJd6M"
+  },
+  {
+    "name": "Elin",
+    "email": "Elin@gmail.se",
+    "password": "$2b$10$fe8ZWbLOV63WGVgJ5C5tiOU6/CPKQuuUPKlxETgTtQhoggQa8LXT2",
+    "stripeCustomerId": "cus_OcggeWbFe9yGHC"
+  },
+  {
+    "name": "Fredrik",
+    "email": "Fredrik@gmail.se",
+    "password": "$2b$10$ddzTDcaUoZhemLKzKXgcwO2axJ8Ww1HtuTmHXY9UNpspBdPigUU0S",
+    "stripeCustomerId": "cus_OcgkGGSZEPGWO4"
   }
 ]

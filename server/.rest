@@ -7,9 +7,9 @@ POST http://localhost:3000/api/users/register
 Content-Type: application/json
 
 {
-    "name": "Hanna",
-    "email": "hanna@gmail.se",
-    "password": "hanna123"
+    "name": "Fredrik",
+    "email": "Fredrik@gmail.se",
+    "password": "elin123"
 }
 
 ####
@@ -18,6 +18,6 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "hanna@gmail.se",
-    "password": "hanna123"
+    "email": "Fredrik@gmail.se",
+    "password": "elin123"
 }
