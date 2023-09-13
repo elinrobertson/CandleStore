@@ -34,7 +34,6 @@ async function register(req, res) {
         if (!Array.isArray(existingUsers)) {
             existingUsers = [];
           }
-
             const newUser = {
             name: name,
             email: email,

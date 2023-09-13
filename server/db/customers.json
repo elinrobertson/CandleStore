@@ -16,5 +16,11 @@
     "email": "Fredrik@gmail.se",
     "password": "$2b$10$ddzTDcaUoZhemLKzKXgcwO2axJ8Ww1HtuTmHXY9UNpspBdPigUU0S",
     "stripeCustomerId": "cus_OcgkGGSZEPGWO4"
+  },
+  {
+    "name": "Anna",
+    "email": "anna@mail.se",
+    "password": "$2b$10$3tta93Iksete8rGaoHLaiegdLppNIIDk.1.SCrq3biUeSwfHbCELC",
+    "stripeCustomerId": "cus_Od4gmSBFU6UN76"
   }
 ]

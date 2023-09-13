@@ -2,13 +2,13 @@
 
 function Register() {
   return (
-    <form>
+    <div>
         <h1>Registrera ny användare</h1>
-            <input type="text" placeholder="Namn" name="name" id="name" required></input>
-            <input type="text" placeholder="Email" name="email" id="email" required></input>
-            <input type="password" placeholder="Password" name="psw" id="psw" required></input>
+            <input type="text" placeholder="Namn" required></input>
+            <input type="text" placeholder="Email" required></input>
+            <input type="password" placeholder="Password" required></input>
         <button>Registrera</button>
-    </form>
+    </div>
   )
 }
 

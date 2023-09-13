@@ -8,7 +8,7 @@ const cookieSession = require("cookie-session")
 const app = express();
 
 
-const CLIENT_URL = "http://localhost:5173";
+// const CLIENT_URL = "http://localhost:5173";
 
 // Middlewares
 app.use(

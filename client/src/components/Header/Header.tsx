@@ -8,6 +8,9 @@ function Header() {
 
   const navigate = useNavigate();
 
+  const navigateToLogin = () => {
+    navigate("./login")
+  }
   const navigateToRegister = () => {
     navigate("./register")
   }
@@ -15,7 +18,7 @@ function Header() {
   return (
     <div className="header-div">
         <h2>Header</h2>
-        <button>Logga in</button> 
+        <button onClick={navigateToLogin}>Logga in</button> 
         <button onClick={navigateToRegister}>Registrera</button> 
         {/* <Link to='/register'><p>Registrera</p></Link> */}
     </div>
