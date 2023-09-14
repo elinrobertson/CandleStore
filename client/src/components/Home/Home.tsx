@@ -23,7 +23,6 @@ export default Home
 //         }
 //     ]
 
-
 //     async function handlePayment() {
 //         const response = await fetch("http://localhost:3000/create-checkout-session", {
 //             method: "POST",

@@ -21,3 +21,9 @@ Content-Type: application/json
     "email": "anna@mail.se",
     "password": "anna123"
 }
+
+###
+GET http://localhost:3000/api/products
+
+###
+POST http://localhost:3000/api/checkout

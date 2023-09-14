@@ -8,7 +8,6 @@ const filePath = "./db/customers.json";
 async function register(req, res) {
     try {
         const { name, email } = req.body;
-
         const hashedPassword = await bcrypt.hash(req.body.password, 10); // Kryptera lösenordet med bcrypt
 
         // Kolla om användaren redan finns i Stripe (baserat på e-postadress eller annan unik identifierare)

@@ -1,5 +1,6 @@
 // import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BsCart3 } from 'react-icons/bs';
 // import { useContext } from "react";
 // import { UserContext } from "../Context/UserContext";
 import "./Header.css";
@@ -19,7 +20,8 @@ function Header() {
     <div className="header-div">
         <h2>Header</h2>
         <button onClick={navigateToLogin}>Logga in</button> 
-        <button onClick={navigateToRegister}>Registrera</button> 
+        <button onClick={navigateToRegister}>Registrera</button>
+        <BsCart3 />
         {/* <Link to='/register'><p>Registrera</p></Link> */}
     </div>
   )
