@@ -3,7 +3,7 @@ import "./Cart.css"
 function Cart() {
     const cart = [
         {
-            product: "price_1NmuYdE1FJ0VahcJfo9kUE51",
+            product: "price_1NmuuWE1FJ0VahcJm2ur2Stb",
             quantity: 1
         },
         {
@@ -12,7 +12,7 @@ function Cart() {
         }
     ]
     async function handlePayment() {
-        const response = await fetch("http://localhost:3000/create-checkout-session", {
+        const response = await fetch("http://localhost:3000/api/checkout/create-checkout-session", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

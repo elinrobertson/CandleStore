@@ -1,51 +1,61 @@
-import "./Home.css"
+import { useState, useEffect } from "react";
+import "./Home.css";
+
+interface IProduct {
+    id: string;
+    name: string;
+    price: number;
+    description: string;
+    images: string
+  }
+
+async function fetchProducts() {
+    try {
+      console.log("Fetching products...");
+      const response = await fetch("/api/products");
+      if (!response.ok) {
+        throw new Error("Failed to fetch products");
+      }
+      const data = await response.json();
+      const productsWithImages = data.data.map((product: IProduct) => ({
+        ...product,
+        image: product.images
+      }));
+      return productsWithImages;
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      return [];
+    }
+  }
 
 function Home() {
-    return (
-        <div className="main-content">
-            <h1>Home</h1>
+
+const [products, setProducts] = useState<IProduct[]>([]);
+
+  useEffect(() => {
+    console.log("useEffect is running...")
+    const getProducts = async () => {
+      const fetchedProducts = await fetchProducts();
+      setProducts(fetchedProducts);
+    };
+
+    getProducts();
+  }, []);
+
+  console.log("Products:", products);
+  return (
+    <div className="main-content">
+      {products.map((product) => (
+        <div key={product.id}>
+            <img src={product.images} alt={product.name} />
+          <h1>{product.name}</h1>
+          <h3>{product.price}</h3>
+          <p>{product.description}</p>
+          <button>Köp</button>
         </div>
-      );
-    }
+      ))}
+    </div>
+  );
+}
 
-export default Home
-
-// function Home() {
-
-//     const cart = [
-//         {
-//             product: "price_1NmuYdE1FJ0VahcJfo9kUE51",
-//             quantity: 1
-//         },
-//         {
-//             product: "price_1Nmus3E1FJ0VahcJE9JRY0Z9",
-//             quantity: 1
-//         }
-//     ]
-
-//     async function handlePayment() {
-//         const response = await fetch("http://localhost:3000/create-checkout-session", {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json"
-//             },
-//             body: JSON.stringify(cart),
-//         })
-
-//         if(!response.ok) {
-//             return;
-//         }
-
-//         const { url } = await response.json()
-//         window.location = url;
-//     }
-
-
-//   return (
-//     <div>
-//         <button onClick={handlePayment}>GE MIG PENGAR TACK</button>
-//     </div>
-//   )
-// }
-
-// export default Home
+export default Home;

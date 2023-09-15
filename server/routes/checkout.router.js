@@ -3,7 +3,6 @@ const { checkout } = require("../controllers/checkout.controller")
 const checkoutRouter = express.Router()
 
 
-
-checkoutRouter.get("/checkout", checkout)
+checkoutRouter.post("/create-checkout-session", checkout)
 
 module.exports = checkoutRouter;
