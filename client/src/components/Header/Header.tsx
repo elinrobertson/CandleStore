@@ -15,13 +15,16 @@ function Header() {
   const navigateToRegister = () => {
     navigate("./register")
   }
+  const navigateToCart = () => {
+    navigate("./cart")
+  }
 
   return (
     <div className="header-div">
         <h2>Header</h2>
         <button onClick={navigateToLogin}>Logga in</button> 
         <button onClick={navigateToRegister}>Registrera</button>
-        <BsCart3 />
+        <div onClick={navigateToCart}><BsCart3 /></div>
         {/* <Link to='/register'><p>Registrera</p></Link> */}
     </div>
   )
