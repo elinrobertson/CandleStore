@@ -46,12 +46,16 @@ const [products, setProducts] = useState<IProduct[]>([]);
   return (
     <div className="main-content">
       {products.map((product) => (
-        <div key={product.id}>
-            <img src={product.images} alt={product.name} />
-          <h1>{product.name}</h1>
-          <h3>{product.price}</h3>
-          <p>{product.description}</p>
-          <button>Köp</button>
+        <div className="product-card">
+          <div className="product-content">
+            <div key={product.id}>
+                <img src={product.images} alt={product.name} />
+              <h1>{product.name}</h1>
+              <h3>{product.price}</h3>
+              <p>{product.description}</p>
+              <button>Köp</button>
+            </div>
+          </div>
         </div>
       ))}
     </div>

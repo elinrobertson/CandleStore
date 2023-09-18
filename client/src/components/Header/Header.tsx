@@ -18,13 +18,25 @@ function Header() {
   const navigateToCart = () => {
     navigate("./cart")
   }
+  const navigateToHome = () => {
+    navigate("./")
+  }
 
   return (
     <div className="header-div">
-        <h2>Header</h2>
-        <button onClick={navigateToLogin}>Logga in</button> 
-        <button onClick={navigateToRegister}>Registrera</button>
-        <div onClick={navigateToCart}><BsCart3 /></div>
+      <div className="store-name" onClick={navigateToHome}>
+        <span>Candle</span><p>Store</p>
+      </div>
+      <div className="header-button-div">
+        <div className="header-buttons">
+          <button onClick={navigateToLogin}>Logga in</button> 
+          <button onClick={navigateToRegister}>Registrera</button>
+        </div>
+        <div className="cart-button" onClick={navigateToCart}>
+          <BsCart3 />
+          <p className='cart-number'>0</p>
+          </div>
+      </div>
         {/* <Link to='/register'><p>Registrera</p></Link> */}
     </div>
   )
