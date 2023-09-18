@@ -1,5 +1,6 @@
 import { useState, useContext} from "react"
 import { UserContext } from "../Context/UserContext"
+import "./Register.css"
 
 function Register() {
 
@@ -9,7 +10,7 @@ function Register() {
   const [password, setPassword] = useState("")
 
   return (
-    <div>
+    <div className="register-div">
         <h1>Registrera ny användare</h1>
             <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Namn" required></input>
             <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Email" required></input>
