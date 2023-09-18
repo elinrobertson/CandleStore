@@ -10,16 +10,16 @@ function Header() {
   const navigate = useNavigate();
 
   const navigateToLogin = () => {
-    navigate("./login")
+    navigate("/login")
   }
   const navigateToRegister = () => {
-    navigate("./register")
+    navigate("/register")
   }
   const navigateToCart = () => {
-    navigate("./cart")
+    navigate("/cart")
   }
   const navigateToHome = () => {
-    navigate("./")
+    navigate("/")
   }
 
   return (
