@@ -5,14 +5,17 @@ interface ICartItem {
     quantity: number
 }
 
-function Cart({ cart }: { cart: ICartItem[] }) {
+interface Props {
+    cart: ICartItem[]
+ }
+ 
+function Cart({cart} : Props) {
 
     async function handlePayment() {
         if (!cart) {
             console.error("Cart is undefined or null.");
             return;
         }
-
         const items = cart.map(item => ({
             price: item.id, 
             quantity: item.quantity,
@@ -32,14 +35,10 @@ function Cart({ cart }: { cart: ICartItem[] }) {
             console.error("Failed to create checkout session.");
             return;
         }
-
         const { url } = await response.json()
         window.location = url;
-
         console.log("Redirecting to checkout:", url);
     }
-
-
   return (
     <div>
         <button onClick={handlePayment}>GE MIG PENGAR TACK</button>

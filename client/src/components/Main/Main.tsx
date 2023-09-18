@@ -17,7 +17,8 @@ function Main() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/cart" element={<Cart />} />
+              <Route path="/cart" element={<Cart cart={[]}/>} />
+              {/* lagt till det över */}
               <Route path="/confirmation" element={<Confirmation />} />
             </Routes>
           </div>

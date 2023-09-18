@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
-
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +8,7 @@
 }
 
 .header-div {
-    background-color: rgb(95, 154, 173);
+    background-color: #bebebe;
     height: 7rem;
     width: 100vw;
     display: flex;
@@ -36,7 +34,7 @@
 }
 
 .store-name p {
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .header-button-div {
@@ -46,20 +44,18 @@
 }
 
 .header-buttons button {
-    border: 2px black solid;
-    background-color: white;
+    border: none;
+    background-color: #bebebe;
     height: 2.5rem;
     width: 6.5rem;
-    margin: 7px;
-    border-radius: 20px;
+    /* margin-right: 7px; */
+    /* border-radius: 20px; */
     letter-spacing: 1px;
-    /* text-transform: uppercase; */
-    
 }
 
 .header-buttons button:hover {
     cursor: pointer;
-    border-color: #adb0b1;
+    color: #adb0b1;
     transition: .5s;
 }
 
@@ -72,7 +68,7 @@
 
 .cart-button:hover {
     cursor: pointer;
-    border-color: #adb0b1;
+    border-color: #bebebe;
     transition: .5s;
 }
 
@@ -84,7 +80,7 @@
     height: 22px;
     width: 22px;
     color: white;
-    background-color: #adb0b1;
+    background-color: #77c8e3;
     border-radius: 50%;
     margin: -10px;
     margin-bottom: 13px;

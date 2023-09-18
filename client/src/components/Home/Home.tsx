@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+// import Cart from "../Cart/Cart";
 import "./Home.css";
 
 interface IPrice {
@@ -73,10 +74,8 @@ const [cart, setCart] = useState<ICart[]>([]);
 
   console.log("Cart in Home:", cart);
 
-  
   return (
     <div className="main-content">
-      
       {products.map((product) => (
             <div className="product-card" key={product.id}>
                 <img src={product.images} alt={product.name} />
@@ -87,8 +86,6 @@ const [cart, setCart] = useState<ICart[]>([]);
             </div>
       ))}
        {/* <Cart cart={cart} /> */}
-      {/* <Cart cart={cart.map((item) => ({ id: item.id, quantity: item.quantity }))} /> */}
-
     </div>
   );
 }
