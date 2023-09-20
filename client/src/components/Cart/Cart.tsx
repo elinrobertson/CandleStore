@@ -25,7 +25,7 @@ function Cart() {
             quantity: item.quantity,
           }));
 
-          console.log("Items to be sent to server:", items);
+        console.log("Items to be sent to server:", items);
           
         const response = await fetch("http://localhost:3000/api/checkout/create-checkout-session", {
             method: "POST",
@@ -45,13 +45,17 @@ function Cart() {
         console.log("Redirecting to checkout:", url);
     }
   return (
-    <div>
-        {/* <h1>{item.id}</h1>
-        <p>{item.quantity}</p> */}
+      <div className="cart-div">
+        <h1>Kundvagn</h1>
+        {cart.map((item) => (
+        <div className="cart-card" key={item.id}>
+            <h3>Antal: {item.quantity} st</h3>
+        </div>
+        ))}
         <button onClick={handlePayment}>GE MIG PENGAR TACK</button>
-        {/* <Cart cart={cart} /> */}
     </div>
-  )
+  );
 }
+
 
 export default Cart

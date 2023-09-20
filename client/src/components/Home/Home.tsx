@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import Cart from "../Cart/Cart";
 import "./Home.css";
 
 interface IPrice {
@@ -7,7 +6,7 @@ interface IPrice {
   unit_amount: number
 }
 
-interface IProduct {
+export interface IProduct {
     id: string
     name: string
     description: string
@@ -15,14 +14,13 @@ interface IProduct {
     default_price: IPrice
   }
 
-  interface ICart {
+  export interface ICart {
     id: string;
     quantity: number;
   }
 
 async function fetchProducts() {
     try {
-      // console.log("Fetching products...");
       const response = await fetch("/api/products");
       if (!response.ok) {
         throw new Error("Failed to fetch products");
@@ -45,21 +43,14 @@ const [products, setProducts] = useState<IProduct[]>([]);
 const [cart, setCart] = useState<ICart[]>([]);
 
   useEffect(() => {
-    // console.log("useEffect is running...")
     const getProducts = async () => {
       const fetchedProducts = await fetchProducts();
       setProducts(fetchedProducts);
     };
-
     getProducts();
   }, []);
 
   const addToCart = (product: IProduct) => {
-
-    // if (!cart) {
-    //   console.error('Cart is undefined or null.');
-    //   return;
-    // }
 
     const existingCartItem = cart.find((item) => item.id === product.default_price.id);
 
@@ -80,20 +71,17 @@ const [cart, setCart] = useState<ICart[]>([]);
     console.log("Cart updated:", cart);
   };
 
-
   return (
     <div className="main-content">
       {products.map((product) => (
-            <div className="product-card" key={product.id}>
-                <img src={product.images} alt={product.name} />
-              <h1>{product.name}</h1>
-              <h3>{product.default_price.unit_amount/100} kr</h3>
-              <p>{product.description}</p>
-              <button onClick={() => addToCart(product)}>Köp</button>
-            </div>
-            
+        <div className="product-card" key={product.id}>
+          <img src={product.images} alt={product.name} />
+          <h1>{product.name}</h1>
+          <h3>{product.default_price.unit_amount/100} kr</h3>
+          <p>{product.description}</p>
+          <button onClick={() => addToCart(product)}>Köp</button>
+        </div>
       ))}
-       {/* <Cart cart={cart} /> */}
     </div>
   );
 }

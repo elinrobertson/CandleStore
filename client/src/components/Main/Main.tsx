@@ -10,7 +10,6 @@ import "./Main.css"
 function Main() {
 
 
-
     return (
       <Router>
       <div className="main-content">

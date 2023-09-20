@@ -1,17 +1,10 @@
-/* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .input-div {
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 3rem;
-    height: 20rem;
+    height: 22rem;
     width: 30rem;
-    /* border: 1px solid blue; */
 }
 
 .input-div h1 {
@@ -20,20 +13,21 @@
     letter-spacing: 1px;
     font-weight: 300;
     margin-bottom: 2rem;
+    border-bottom: 1px #77c8e3 solid;
 }
 
 .input-div input {
     border: none;
-    border-bottom: 1px black solid;
-    width: 13rem;
-    margin: 10px;
+    border-bottom: 1px #77c8e3 solid;
+    width: 20rem;
+    margin: 15px;
 }
 
 .input-div input::placeholder {
     text-transform: uppercase;
     letter-spacing: 1px;
     border: none;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .input-div button {

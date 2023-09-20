@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 .main-content {
     width: 100%;
     align-items: center;
@@ -12,10 +11,10 @@
     flex-wrap: wrap;
     display: flex;
     gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .product-card {
-    /* margin-top: 2rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -28,11 +27,9 @@
     padding: 10px;
 }
 
-
 .product-card img {
     height: 18.75rem;
     width: 18.75rem;
-    /* border: rgb(60, 0, 255) 1px solid; */
     margin-top: 10px;
 }
 

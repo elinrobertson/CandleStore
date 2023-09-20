@@ -28,5 +28,11 @@
     "email": "elsa@mail.se",
     "password": "$2b$10$PAC1dcu68btcdXuxzNxyxuMvBkYF2nG6L//ZBQkYc2N2xdwxiV9wy",
     "stripeCustomerId": "cus_Od8wJbiGbQyWNL"
+  },
+  {
+    "name": "Emilie",
+    "email": "emilie@mail.se",
+    "password": "$2b$10$EAZmVqrLCB8D0ValtcCEu.vPwtQXkStnpKpgV5IjRSTci0OeNCQPe",
+    "stripeCustomerId": "cus_Ofls2HClScqCFi"
   }
 ]

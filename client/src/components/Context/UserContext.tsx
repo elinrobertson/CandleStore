@@ -1,5 +1,4 @@
 import { PropsWithChildren, createContext, useState } from "react";
-// import { useNavigate } from "react-router";
 
 export interface IUser {
     name: string,
@@ -12,7 +11,7 @@ export interface Credentials {
   }
 
  interface UserContext {
-    login: (credentials: Credentials) => void,
+  login: (credentials: Credentials,) => void,
     registerUser: (credentials: IUser) => void
 }
 
@@ -22,7 +21,7 @@ export const UserContext = createContext<UserContext>(null as any)
 function UserProvider({ children }: PropsWithChildren) {
 
     const [loggedinUser, setLoggedinUser] = useState(null)
-    // const navigate = useNavigate();
+  
 
 async function registerUser(credentials: IUser) {
   try {
@@ -39,7 +38,6 @@ async function registerUser(credentials: IUser) {
       const user = await res.json()
       console.log("Registretingen lyckades. Serverrespons:", res);
       setLoggedinUser(user)
-      // navigate('/');
     }
   } catch (error) {
     console.log("Fel vid inloggning:", error);
@@ -47,6 +45,7 @@ async function registerUser(credentials: IUser) {
 }
 
 async function login(credentials: Credentials) {
+
     try {
       const res = await fetch("/api/users/login", {
         
@@ -59,11 +58,12 @@ async function login(credentials: Credentials) {
 
       if (res.ok) {
         const user = await res.json()
-        console.log("Registrering lyckades", res);
-        setLoggedinUser(user)
+        console.log("Inloggning lyckades", res);
+
+        setLoggedinUser(user);
       }
     } catch (error) {
-      console.log("Fel vid registrering:", error);
+      console.log("Fel vid inloggning:", error);
     }
   }
   return (

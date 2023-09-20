@@ -1,0 +1,37 @@
+.cart-div h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    border-bottom: 1px #77c8e3 solid;
+}
+
+.cart-div button {
+    border: 1px black solid;
+    background-color: white;
+    height: 2.5rem;
+    width: 12.5rem;
+    margin-top: 20px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.cart-div button:hover {
+    cursor: pointer;
+    border-color: #adb0b1;
+    transition: .5s;
+}
+
+.cart-div h3 {
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.quantity-text {
+    font-weight: 300;
+}

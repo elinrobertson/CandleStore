@@ -1,11 +1,19 @@
-// import React from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { NavLink } from 'react-router-dom';
 import { BsCart3 } from 'react-icons/bs';
 import "./Header.css";
+import { useEffect, useState } from 'react';
+import { ICart } from '../Home/Home';
 
 function Header() {
 
+  const [cartCount, setCartCount] = useState<number>(0);
+
+  useEffect(() => {
+    const cartDataFromLS = JSON.parse(localStorage.getItem("cart") || "[]") as ICart[];
+    const totalCount = cartDataFromLS.reduce((count, item) => count + item.quantity, 0);
+    setCartCount(totalCount)
+  },[]);
+  
   const navigate = useNavigate();
 
   const navigateToLogin = () => {
@@ -33,35 +41,12 @@ function Header() {
         </div>
         <div className="cart-button" onClick={navigateToCart}>
           <BsCart3 />
-          <p className='cart-number'>0</p>
+          <p className='cart-number'>{cartCount}</p>
         </div>
       </div>
     </div>
   )
 }
-
-
-  // return (
-  //   <div className="header-div">
-  //     <div className="store-name">
-  //       <NavLink to="/"> 
-  //         <span>Candle</span><p>Store</p>
-  //       </NavLink>
-  //     </div>
-  //     <div className="header-button-div">
-  //       <div className="header-buttons">
-  //         <NavLink to="/login">Logga in</NavLink>
-  //         <NavLink to="/register">Registrera</NavLink>
-  //       </div>
-  //       <div className="cart-button">
-  //         <NavLink to="/cart">
-  //           <BsCart3 />
-  //           <p className='cart-number'>0</p>
-  //         </NavLink>
-  //       </div>
-  //     </div>
-  //   </div>
-  // )
 
 
 export default Header;

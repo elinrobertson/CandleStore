@@ -1,0 +1,18 @@
+.confirmation-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.checkmark {
+    font-size: 6rem;
+    color: #77e3c4;
+}
+
+h3 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
