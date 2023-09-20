@@ -55,6 +55,12 @@ const [cart, setCart] = useState<ICart[]>([]);
   }, []);
 
   const addToCart = (product: IProduct) => {
+
+    // if (!cart) {
+    //   console.error('Cart is undefined or null.');
+    //   return;
+    // }
+
     const existingCartItem = cart.find((item) => item.id === product.default_price.id);
 
     if (existingCartItem) {
@@ -65,14 +71,15 @@ const [cart, setCart] = useState<ICart[]>([]);
           : item
       );
       setCart(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart))
     } else {
       // Om produkten inte finns, lägg till den i kundvagnen med en startkvantitet på 1
       setCart([...cart, { id: product.default_price.id, quantity: 1 }]);
+      localStorage.setItem("cart", JSON.stringify([...cart, { id: product.default_price.id, quantity: 1 }]))
     }
     console.log("Cart updated:", cart);
   };
 
-  console.log("Cart in Home:", cart);
 
   return (
     <div className="main-content">
@@ -84,6 +91,7 @@ const [cart, setCart] = useState<ICart[]>([]);
               <p>{product.description}</p>
               <button onClick={() => addToCart(product)}>Köp</button>
             </div>
+            
       ))}
        {/* <Cart cart={cart} /> */}
     </div>

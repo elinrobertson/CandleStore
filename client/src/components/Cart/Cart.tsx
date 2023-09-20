@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./Cart.css"
 
 interface ICartItem {
@@ -5,17 +6,20 @@ interface ICartItem {
     quantity: number
 }
 
-interface Props {
-    cart: ICartItem[]
- }
- 
-function Cart({cart} : Props) {
+function Cart() {
+    const [cart, setCart] = useState<ICartItem[]>([])
+
+    useEffect(() => {
+        if(localStorage.getItem("cart")) {
+            const cartFromStorage = JSON.parse(localStorage.getItem("cart")!)
+            setCart(cartFromStorage)
+        } else {
+            setCart([])
+        }
+    },[])
 
     async function handlePayment() {
-        if (!cart) {
-            console.error("Cart is undefined or null.");
-            return;
-        }
+
         const items = cart.map(item => ({
             price: item.id, 
             quantity: item.quantity,
@@ -28,20 +32,24 @@ function Cart({cart} : Props) {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ line_items: items }),
+            body: JSON.stringify(cart),
         })
 
         if(!response.ok) {
             console.error("Failed to create checkout session.");
             return;
         }
+
         const { url } = await response.json()
         window.location = url;
         console.log("Redirecting to checkout:", url);
     }
   return (
     <div>
+        {/* <h1>{item.id}</h1>
+        <p>{item.quantity}</p> */}
         <button onClick={handlePayment}>GE MIG PENGAR TACK</button>
+        {/* <Cart cart={cart} /> */}
     </div>
   )
 }
