@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../Context/UserContext";
 import "./Cart.css"
 
 interface ICartItem {
@@ -8,6 +9,7 @@ interface ICartItem {
 
 function Cart() {
     const [cart, setCart] = useState<ICartItem[]>([])
+    const userContext = useContext(UserContext)
 
     useEffect(() => {
         if(localStorage.getItem("cart")) {
@@ -19,6 +21,11 @@ function Cart() {
     },[])
 
     async function handlePayment() {
+
+        if(!userContext || !userContext.loggedinUser) {
+            alert("Du måste logga in för att gå till kassan")
+            return;
+        }
 
         const items = cart.map(item => ({
             price: item.id, 

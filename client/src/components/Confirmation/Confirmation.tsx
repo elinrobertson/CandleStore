@@ -1,5 +1,5 @@
-import { AiOutlineCheckCircle, AiOutlineCheck, AiFillCheckCircle } from 'react-icons/ai';
-import { BsCheck2 } from 'react-icons/bs';
+import { AiFillCheckCircle } from 'react-icons/ai';
+// import { BsCheck2 } from 'react-icons/bs';
 import "./Confirmaion.css"
 
 function Confirmation() {
@@ -17,3 +17,6 @@ function Confirmation() {
   }
   
   export default Confirmation
+
+
+  // AiOutlineCheckCircle, AiOutlineCheck, 

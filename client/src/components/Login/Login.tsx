@@ -3,9 +3,15 @@ import { UserContext } from "../Context/UserContext"
 import "./Login.css"
 
 function Login() {
-  const {login} = useContext(UserContext)
+  const context = useContext(UserContext)
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+
+  const handleLogin = () => {
+    if (!!context.login && !!context.login)
+    context.login({ email, password})
+  }
 
 
   return (
@@ -13,7 +19,7 @@ function Login() {
     <h1>Logga in</h1>
         <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Email" required></input>
         <input value={password} onChange={(e) => setPassword(e.target.value)}type="password" placeholder="Password" required></input>
-    <button onClick={() => login({email, password})}>Logga in</button>
+    <button onClick={handleLogin}>Logga in</button>
 </div>
   )
 }

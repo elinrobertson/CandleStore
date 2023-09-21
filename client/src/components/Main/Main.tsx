@@ -5,6 +5,7 @@ import Login from '../Login/Login';
 import Register from '../Register/Register';
 import Cart from '../Cart/Cart';
 import Confirmation from '../Confirmation/Confirmation';
+// import UserProvider from '../Context/UserContext';
 import "./Main.css"
 
 function Main() {
@@ -13,6 +14,7 @@ function Main() {
     return (
       <Router>
       <div className="main-content">
+       {/* <UserProvider /> */}
               <Header/>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -21,6 +23,7 @@ function Main() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/confirmation" element={<Confirmation />} />
             </Routes>
+          {/* <UserProvider /> */}
           </div>
       </Router>
       );
