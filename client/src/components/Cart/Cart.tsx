@@ -47,7 +47,8 @@ function Cart() {
             return;
         }
 
-        const { url } = await response.json()
+        const { url, sessionId } = await response.json()
+        localStorage.setItem("session-id", sessionId)
         window.location = url;
         console.log("Redirecting to checkout:", url);
     }
@@ -59,7 +60,7 @@ function Cart() {
             <h3>Antal: {item.quantity} st</h3>
         </div>
         ))}
-        <button onClick={handlePayment}>GE MIG PENGAR TACK</button>
+        <button onClick={handlePayment}>Gå till kassan</button>
     </div>
   );
 }

@@ -1,0 +1,55 @@
+[
+  {
+    "created": 1695376482,
+    "customer": "Emilie",
+    "email": "emilie@mail.se",
+    "products": [
+      {
+        "product": "BLACKBERRY ROSE OUD",
+        "quantity": 1,
+        "price": 369
+      }
+    ]
+  },
+  {
+    "created": 1695376619,
+    "customer": "Emilie",
+    "email": "emilie@mail.se",
+    "products": [
+      {
+        "product": "ROSE COLORED GLASSES",
+        "quantity": 1,
+        "price": 359
+      }
+    ]
+  },
+  {
+    "created": 1695376824,
+    "customer": "Emilie",
+    "email": "emilie@mail.se",
+    "products": [
+      {
+        "product": "ROSE PETAL ICE CREAM",
+        "quantity": 1,
+        "price": 399
+      }
+    ]
+  },
+  {
+    "created": 1695377199,
+    "customer": "Elsa",
+    "email": "elsa@mail.se",
+    "products": [
+      {
+        "product": "BLACKBERRY ROSE OUD",
+        "quantity": 1,
+        "price": 369
+      },
+      {
+        "product": "BERGAMOT ROSE",
+        "quantity": 1,
+        "price": 429
+      }
+    ]
+  }
+]
