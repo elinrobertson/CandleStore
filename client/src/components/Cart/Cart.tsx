@@ -60,7 +60,7 @@ function Cart() {
             <h3>Antal: {item.quantity} st</h3>
         </div>
         ))}
-        <button onClick={handlePayment}>Gå till kassan</button>
+        <button onClick={ handlePayment }>Gå till kassan</button>
     </div>
   );
 }

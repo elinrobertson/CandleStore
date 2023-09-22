@@ -22,7 +22,7 @@ function Confirmation() {
         throw new Error("Något gick fel med anropet till servern.");
       }
 
-      const {verified} = await response.json()
+      const { verified } = await response.json()
 
       if(verified) {
         setIsPaymentVerified(true)
@@ -34,7 +34,6 @@ function Confirmation() {
     }
     verifyPayment()
   }, [])
-
 
     return (
         isPaymentVerified ?   <div className="confirmation-div">

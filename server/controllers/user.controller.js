@@ -20,7 +20,6 @@ async function register(req, res) {
         const customer = await stripe.customers.create({
             name: name,
             email: email,
-            // password: hashedPassword
         });
 
         let existingUsers = [];
@@ -47,8 +46,6 @@ async function register(req, res) {
         fs.writeFileSync(filePath, jsonData)
 
         // Nu har du skapat en ny användare i Stripe
-        // Du kan lägga till mer logik här om du behöver, som att hantera lösenord eller andra användaruppgifter
-
         res.status(201).json(customer);
         
     } catch (error) {

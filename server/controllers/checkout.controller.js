@@ -5,7 +5,6 @@ const filePath = "./db/orders.json";
 
 async function checkout (req, res) {
     try {
-
         const session = await stripe.checkout.sessions.create({
             line_items: req.body.map(item => {
                 return {
@@ -31,7 +30,6 @@ async function checkout (req, res) {
 async function verify(req, res) {
     
    try {
-
        const session = await stripe.checkout.sessions.retrieve(req.body.sessionId);
 
         if(session.payment_status != "paid") {
@@ -64,14 +62,12 @@ async function verify(req, res) {
             })
         }
         console.log("ORDER", order)
-
         existingOrders.push(order);
 
         const jsonData = JSON.stringify(existingOrders, null, 2);
 
         fs.writeFileSync(filePath, jsonData)
-        
-       res.status(200).json({ verified: true });
+        res.status(200).json({ verified: true });
 
    } catch (error) {
        console.log(error.message);
@@ -79,5 +75,6 @@ async function verify(req, res) {
    }
   }
   
+
 
 module.exports = { checkout, verify }

@@ -37,6 +37,7 @@ async function fetchProducts() {
     }
   }
 
+
 function Home() {
 
 const [products, setProducts] = useState<IProduct[]>([]);
